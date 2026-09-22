@@ -1,0 +1,327 @@
+Vítejte v programu minicom 2.9                                                 
+                                                                               
+VOLBY: I18n                                                                    
+Port /dev/ttySC, 09:41:06                                                      
+                                                                               
+Stiskněte CTRL-A Z pro nápovědu o klávesách se zvláštním významem              
+                                                                               
+a tak Miluju CISCO paneboze                                                    
+                                                                               
+SW16>                                                                          
+SW16>                                                                          
+SW16>                                                                          
+SW16>enable                                                                    
+SW16#conf t                                                                    
+Enter configuration commands, one per line.  End with CNTL/Z.                  
+SW16(config)#hostname                                                          
+% Incomplete command.                                                          
+                                                                               
+SW16(config)#hostname SW16-SW4                                                 
+SW16-SW4(config)#int f 0/1 
+SW16-SW4(config-if)#int fa 0/1                                                 
+SW16-SW4(config-if)#desc
+SW16-SW4(config-if)#description Linka k PC                                      
+SW16-SW4(config-if)#int fa 0/19                                                 
+SW16-SW4(config-if)#description Linka k PC                                      
+SW16-SW4(config-if)#show int                                                    
+                      ^                                                         
+% Invalid input detected at '^' marker.                                         
+                                                                                
+SW16-SW4(config-if)#do sh int status                                            
+                                                                                
+Port      Name               Status       Vlan       Duplex  Speed Type         
+Fa0/1     Linka k PC         notconnect   1            auto   auto 10/100BaseTX 
+Fa0/2                        notconnect   1            auto   auto 10/100BaseTX 
+Fa0/3                        notconnect   1            auto   auto 10/100BaseTX 
+Fa0/4                        notconnect   1            auto   auto 10/100BaseTX 
+Fa0/5                        notconnect   1            auto   auto 10/100BaseTX 
+Fa0/6                        notconnect   1            auto   auto 10/100BaseTX 
+Fa0/7                        notconnect   1            auto   auto 10/100BaseTX 
+Fa0/8                        notconnect   1            auto   auto 10/100BaseTX 
+Fa0/9                        notconnect   1            auto   auto 10/100BaseTX 
+Fa0/10                       notconnect   1            auto   auto 10/100BaseTX 
+Fa0/11                       notconnect   1            auto   auto 10/100BaseTX 
+Fa0/12                       notconnect   1            auto   auto 10/100BaseTX 
+Fa0/13                       notconnect   1            auto   auto 10/100BaseTX 
+Fa0/14                       notconnect   1            auto   auto 10/100BaseTX 
+Fa0/15                       notconnect   1            auto   auto 10/100BaseTX 
+Fa0/16                       notconnect   1            auto   auto 10/100BaseTX 
+Fa0/17                       notconnect   1            auto   auto 10/100BaseTX 
+Fa0/18                       notconnect   1            auto   auto 10/100BaseTX 
+Fa0/19    Linka k PC         connected    1          a-full  a-100 10/100BaseTX 
+Fa0/20                       notconnect   1            auto   auto 10/100BaseTX 
+Fa0/21                       notconnect   1            auto   auto 10/100BaseTX 
+Fa0/22                       notconnect   1            auto   auto 10/100BaseTX 
+Fa0/23                       connected    1          a-full  a-100 10/100BaseTX 
+Fa0/24                       connected    1          a-full  a-100 10/100BaseTX 
+Gi0/1                        notconnect   1            auto   auto 10/100/1000BX
+Gi0/2                        notconnect   1            auto   auto 10/100/1000BX
+SW16-SW4(config-if)#sh cdp nei                                                  
+SW16-SW4(config-if)#sh cdp nei                                                  
+SW16-SW4(config-if)#sh cdp neighbours                                           
+                       ^                                                        
+% Invalid input detected at '^' marker.                                         
+                                                                                
+SW16-SW4(config-if)#                                                            
+SW16-SW4#conf t                                                                 
+*Mar  1 00:19:52.625: %SYS-5-CONFIG_I: Configured from console by console       
+Enter configuration commands, one per line.  End with CNTL/Z.                   
+SW16-SW4(config)#sh cdp neighbours                                              
+                    ^                                                           
+% Invalid input detected at '^' marker.                                         
+                                                                                
+SW16-SW4(config)#conf t                                                         
+                     ^                                                          
+% Invalid input detected at '^' marker.                                         
+                                                                                
+SW16-SW4(config)#show cdp neighbours                                            
+                   ^                                                            
+% Invalid input detected at '^' marker.                                         
+                                                                                
+SW16-SW4(config)#conf t                                                         
+                     ^                                                          
+% Invalid input detected at '^' marker.                                         
+                                                                                
+SW16-SW4(config)#conf                                                           
+SW16-SW4(config)#conf                                                           
+                     ^                                                          
+% Invalid input detected at '^' marker.                                         
+                                                                                
+SW16-SW4(config)#do sh int status                                               
+                                                                                
+Port      Name               Status       Vlan       Duplex  Speed Type         
+Fa0/1     Linka k PC         notconnect   1            auto   auto 10/100BaseTX 
+Fa0/2                        notconnect   1            auto   auto 10/100BaseTX 
+Fa0/3                        notconnect   1            auto   auto 10/100BaseTX 
+Fa0/4                        notconnect   1            auto   auto 10/100BaseTX 
+Fa0/5                        notconnect   1            auto   auto 10/100BaseTX 
+Fa0/6                        notconnect   1            auto   auto 10/100BaseTX 
+Fa0/7                        notconnect   1            auto   auto 10/100BaseTX 
+Fa0/8                        notconnect   1            auto   auto 10/100BaseTX 
+Fa0/9                        notconnect   1            auto   auto 10/100BaseTX 
+Fa0/10                       notconnect   1            auto   auto 10/100BaseTX 
+Fa0/11                       notconnect   1            auto   auto 10/100BaseTX 
+Fa0/12                       notconnect   1            auto   auto 10/100BaseTX 
+Fa0/13                       notconnect   1            auto   auto 10/100BaseTX 
+Fa0/14                       notconnect   1            auto   auto 10/100BaseTX 
+Fa0/15                       notconnect   1            auto   auto 10/100BaseTX 
+Fa0/16                       notconnect   1            auto   auto 10/100BaseTX 
+Fa0/17                       notconnect   1            auto   auto 10/100BaseTX 
+Fa0/18                       notconnect   1            auto   auto 10/100BaseTX 
+Fa0/19    Linka k PC         connected    1          a-full  a-100 10/100BaseTX 
+Fa0/20                       notconnect   1            auto   auto 10/100BaseTX 
+Fa0/21                       notconnect   1            auto   auto 10/100BaseTX 
+Fa0/22                       notconnect   1            auto   auto 10/100BaseTX 
+Fa0/23                       connected    1          a-full  a-100 10/100BaseTX 
+Fa0/24                       connected    1          a-full  a-100 10/100BaseTX 
+Gi0/1                        notconnect   1            auto   auto 10/100/1000BX
+Gi0/2                        notconnect   1            auto   auto 10/100/1000BX
+SW16-SW4(config)#                                                               
+SW16-SW4(config)#                                                               
+SW16-SW4(config)#in                                                             
+SW16-SW4(config)#interface fa                                                   
+SW16-SW4(config)#interface fastEthernet 0/23                                    
+SW16-SW4#                                                                       
+*Mar  1 00:22:01.650: %SYS-5-CONFIG_I: Configured from console by consoles      
+% Type "show ?" for a list of subcommands                                       
+SW16-SW4#                                                                       
+SW16-SW4#sh cdp neighbours                                                      
+                       ^                                                        
+% Invalid input detected at '^' marker.                                         
+                                                                                
+SW16-SW4#conf t                                                                 
+Enter configuration commands, one per line.  End with CNTL/Z.                   
+SW16-SW4(config)#int fa                                                         
+SW16-SW4(config)#int fastEthernet 0/19                                          
+SW16-SW4(config-if)#sh cdp neighbours                                           
+                       ^                                                        
+% Invalid input detected at '^' marker.                                         
+                                                                                
+SW16-SW4(config-if)#sh cdp neighbors                                            
+                       ^                                                        
+% Invalid input detected at '^' marker.                                         
+                                                                                
+SW16-SW4(config-if)#sh cdp neighbours                                           
+SW16-SW4#                                                                       
+SW16-SW4#end                                                                    
+Translating "end"...domain server (255.255.255.255)                             
+% Unknown command or computer name, or unable to find computer address          
+SW16-SW4#                                                                       
+*Mar  1 00:22:58.978: %SYS-5-CONFIG_I: Configured from console by console       
+SW16-SW4#sh cdp neig                                                            
+SW16-SW4#sh cdp neighbors                                                       
+Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge         
+                  S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone,      
+                  D - Remote, C - CVTA, M - Two-port Mac Relay                  
+                                                                                
+Device ID        Local Intrfce     Holdtme    Capability  Platform  Port ID     
+SW15-SW3         Fas 0/24          145              S I   WS-C2960- Fas 0/23    
+SW13-SW1         Fas 0/23          163              S I   WS-C2960- Fas 0/24    
+SW16-SW4#conf t                                                                 
+Enter configuration commands, one per line.  End with CNTL/Z.                   
+SW16-SW4(config)#int fa                                                         
+SW16-SW4(config)#int fastEthernet 0/24                                          
+SW16-SW4(config-if)#desc                                                        
+SW16-SW4(config-if)#description Cesta k SW15-SW3                                
+SW16-SW4(config-if)#                                                            
+SW16-SW4#                                                                       
+*Mar  1 00:24:08.544: %SYS-5-CONFIG_I: Configured from console by consolecon    
+% Ambiguous command:  "con"                                                     
+SW16-SW4#conf t                                                                 
+Enter configuration commands, one per line.  End with CNTL/Z.                   
+SW16-SW4(config)#int fastEthernet 0/23                                          
+SW16-SW4(config-if)#description Cesta k SW13-SW1                                
+SW16-SW4(config-if)#end                                                         
+SW16-SW4#so                                                                     
+*Mar  1 00:24:32.158: %SYS-5-CONFIG_I: Configured from console by consolenf     
+Translating "sonf"...domain server (255.255.255.255)                            
+% Unknown command or computer name, or unable to find computer address          
+SW16-SW4#conf t                                                                 
+Enter configuration commands, one per line.  End with CNTL/Z.                   
+SW16-SW4(config)#do sh int status                                               
+                                                                                
+Port      Name               Status       Vlan       Duplex  Speed Type         
+Fa0/1     Linka k PC         notconnect   1            auto   auto 10/100BaseTX 
+Fa0/2                        notconnect   1            auto   auto 10/100BaseTX 
+Fa0/3                        notconnect   1            auto   auto 10/100BaseTX 
+Fa0/4                        notconnect   1            auto   auto 10/100BaseTX 
+Fa0/5                        notconnect   1            auto   auto 10/100BaseTX 
+Fa0/6                        notconnect   1            auto   auto 10/100BaseTX 
+Fa0/7                        notconnect   1            auto   auto 10/100BaseTX 
+Fa0/8                        notconnect   1            auto   auto 10/100BaseTX 
+Fa0/9                        notconnect   1            auto   auto 10/100BaseTX 
+Fa0/10                       notconnect   1            auto   auto 10/100BaseTX 
+Fa0/11                       notconnect   1            auto   auto 10/100BaseTX 
+Fa0/12                       notconnect   1            auto   auto 10/100BaseTX 
+Fa0/13                       notconnect   1            auto   auto 10/100BaseTX 
+Fa0/14                       notconnect   1            auto   auto 10/100BaseTX 
+Fa0/15                       notconnect   1            auto   auto 10/100BaseTX 
+Fa0/16                       notconnect   1            auto   auto 10/100BaseTX 
+Fa0/17                       notconnect   1            auto   auto 10/100BaseTX 
+Fa0/18                       notconnect   1            auto   auto 10/100BaseTX 
+Fa0/19    Linka k PC         connected    1          a-full  a-100 10/100BaseTX 
+Fa0/20                       notconnect   1            auto   auto 10/100BaseTX 
+Fa0/21                       notconnect   1            auto   auto 10/100BaseTX 
+Fa0/22                       notconnect   1            auto   auto 10/100BaseTX 
+Fa0/23    Cesta k SW13-SW1   connected    1          a-full  a-100 10/100BaseTX 
+Fa0/24    Cesta k SW15-SW3   connected    1          a-full  a-100 10/100BaseTX 
+Gi0/1                        notconnect   1            auto   auto 10/100/1000BX
+Gi0/2                        notconnect   1            auto   auto 10/100/1000BX
+SW16-SW4(config)#                                                               
+SW16-SW4(config)#                                                               
+SW16-SW4(config)#                                                               
+SW16-SW4(config)#spa                                                            
+SW16-SW4(config)#spanning-tree vlan 1 pr                                        
+SW16-SW4(config)#spanning-tree vlan 1 priority                                  
+% Incomplete command.                                                           
+                                                                                
+SW16-SW4(config)#sh spa                                                         
+SW16-SW4(config)#sh span                                                        
+SW16-SW4(config)#sh spanni                                                      
+SW16-SW4(config)#sh spanning-                                                   
+SW16-SW4#                                                                       
+*Mar  1 00:26:50.075: %SYS-5-CONFIG_I: Configured from console by console       
+SW16-SW4#sh span                                                                
+SW16-SW4#sh spanning-tree                                                       
+                                                                                
+VLAN0001                                                                        
+  Spanning tree enabled protocol ieee                                           
+  Root ID    Priority    32769                                                  
+             Address     001e.49e0.6f00                                         
+             Cost        19                                                     
+             Port        24 (FastEthernet0/24)                                  
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec           
+                                                                                
+  Bridge ID  Priority    32769  (priority 32768 sys-id-ext 1)                   
+             Address     0026.519f.f580                                         
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec           
+             Aging Time  300 sec                                                
+                                                                                
+Interface           Role Sts Cost      Prio.Nbr Type                            
+------------------- ---- --- --------- -------- --------------------------------
+Fa0/19              Desg FWD 19        128.19   P2p                             
+Fa0/23              Desg FWD 19        128.23   P2p                             
+Fa0/24              Root FWD 19        128.24   P2p                             
+                                                                                
+                                                                                
+SW16-SW4#conf t                                                                 
+Enter configuration commands, one per line.  End with CNTL/Z.                   
+SW16-SW4(config)#int fa                                                         
+SW16-SW4(config)#int fastEthernet 0/23                                          
+SW16-SW4(config-if)#spanin                                                      
+SW16-SW4(config-if)#spani                                                       
+SW16-SW4(config-if)#spa                                                         
+SW16-SW4(config-if)#spanning-tree cost 100                                      
+SW16-SW4(config-if)#end                                                         
+SW16-SW4#                                                                       
+SW16-SW4#                                                                       
+*Mar  1 00:31:39.365: %SYS-5-CONFIG_I: Configured from console by console       
+SW16-SW4#sp                                                                     
+SW16-SW4#sh spa                                                                 
+SW16-SW4#sh spanning-tree                                                       
+                                                                                
+VLAN0001                                                                        
+  Spanning tree enabled protocol ieee                                           
+  Root ID    Priority    32769                                                  
+             Address     001e.49e0.6f00                                         
+             Cost        19                                                     
+             Port        24 (FastEthernet0/24)                                  
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec           
+                                                                                
+  Bridge ID  Priority    32769  (priority 32768 sys-id-ext 1)                   
+             Address     0026.519f.f580                                         
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec           
+             Aging Time  300 sec                                                
+                                                                                
+Interface           Role Sts Cost      Prio.Nbr Type                            
+------------------- ---- --- --------- -------- --------------------------------
+Fa0/19              Desg FWD 19        128.19   P2p                             
+Fa0/23              Desg FWD 100       128.23   P2p                             
+Fa0/24              Root FWD 19        128.24   P2p                             
+                                                                                
+                                                                                
+SW16-SW4#sh spanning-tree                                                       
+                                                                                
+VLAN0001                                                                        
+  Spanning tree enabled protocol ieee                                           
+  Root ID    Priority    32769                                                  
+             Address     001e.49e0.6f00                                         
+             Cost        19                                                     
+             Port        24 (FastEthernet0/24)                                  
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec           
+                                                                                
+  Bridge ID  Priority    32769  (priority 32768 sys-id-ext 1)                   
+             Address     0026.519f.f580                                         
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec           
+             Aging Time  300 sec                                                
+                                                                                
+Interface           Role Sts Cost      Prio.Nbr Type                            
+------------------- ---- --- --------- -------- --------------------------------
+Fa0/19              Desg FWD 19        128.19   P2p                             
+Fa0/23              Desg FWD 100       128.23   P2p                             
+Fa0/24              Root FWD 19        128.24   P2p                             
+                                                                                
+                                                                                
+SW16-SW4#sh spanning-tree                                                       
+                                                                                
+VLAN0001                                                                        
+  Spanning tree enabled protocol ieee                                           
+  Root ID    Priority    32769                                                  
+             Address     001e.49e0.6f00                                         
+             Cost        19                                                     
+             Port        24 (FastEthernet0/24)                                  
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec           
+                                                                                
+  Bridge ID  Priority    32769  (priority 32768 sys-id-ext 1)                   
+             Address     0026.519f.f580                                         
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec           
+             Aging Time  300 sec                                                
+                                                                                
+Interface           Role Sts Cost      Prio.Nbr Type                            
+------------------- ---- --- --------- -------- --------------------------------
+Fa0/19              Desg FWD 19        128.19   P2p                             
+Fa0/23              Desg FWD 100       128.23   P2p                             
+Fa0/24              Root FWD 19        128.24   P2p                             
+                                                                                
+                                                                                
+SW16-SW4#             
