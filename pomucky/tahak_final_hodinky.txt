@@ -1,0 +1,87 @@
+
+
+SWITCH (VLAN + TRUNK)
+enable
+conf t
+hostname SW1
+vlan 60
+ name VLAN_A
+vlan 105
+ name VLAN_B
+exit
+
+! Port k PC (access):
+int Fa0/1
+ desc K_PC1A
+ switchport mode access
+ switchport access vlan 60
+ exit
+
+! Port mezi switchi / k routeru (trunk):
+int Fa0/4
+ desc TRUNK
+ switchport mode trunk
+ switchport trunk allowed vlan 60,105
+ exit
+
+[3] ROUTER (Router-on-a-Stick)
+enable
+conf t
+hostname R1
+int Gig0/1
+ no shut
+ exit
+
+int Gig0/1.60
+ desc GW_VLAN_A
+ encap dot1Q 60
+ ip add 42.173.200.1 255.255.254.0
+ exit
+
+int Gig0/1.105
+ desc GW_VLAN_B
+ encap dot1Q 105
+ ip add 42.173.202.1 255.255.255.0
+ exit
+
+[4] OSPF (smerovani)
+router ospf 1
+ network 42.173.200.0 0.0.1.255 area 0
+ network 42.173.202.0 0.0.0.255 area 0
+ network 42.173.203.32 0.0.0.3 area 0
+ passive-interface Gig0/1.60
+ passive-interface Gig0/1.105
+ default-information originate
+ exit
+
+! Staticka default cesta k ISP:
+ip route 0.0.0.0 0.0.0.0 10.0.0.1
+
+[5] NAT (na R1 k ISP)
+! Oznaceni portu:
+int Gig0/2
+ ip nat outside
+ exit
+int Gig0/1.60
+ ip nat inside
+ exit
+int Gig0/1.105
+ ip nat inside
+ exit
+
+! Pravidlo a pool:
+access-list 1 permit 192.168.1.0 0.0.0.255
+ip nat pool MOJE_POOL 42.173.203.41 42.173.203.46 netmask 255.255.255.248
+ip nat inside source list 1 pool MOJE_POOL overload
+
+[6] WILDCARD MASKY
+/23 (255.255.254.0) -> 0.0.1.255
+/24 (255.255.255.0) -> 0.0.0.255
+/27 (255.255.255.224)-> 0.0.0.31
+/30 (255.255.255.252)-> 0.0.0.3
+
+[7] KONTROLA & ULOZENI
+do show ip int br
+do show ip route
+do show ip nat trans
+write memory
